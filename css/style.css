@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #eee;
+}
+
+.nav {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+.nav > .nav-header {
+    display: inline;
+    margin-right: auto;
+    margin-left: 20px;
+}
+.nav > .nav-header > img {
+    height: 40px;
+    padding: 5px;
+}
+  
+.nav > .nav-btn {
+    display: none;
+}
+  
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+}
+  
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #FFC116;
+}
+
+.nav > .nav-links > a:hover {
+    color: #0F8C3B;
+}
+  
+.nav > #nav-check {
+    display: none;
+}
+  
+@media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #666666;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #ffffff;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+}
+
+.hero {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.hero-text > a {
+  text-decoration: none;
+  background-color: #0F8C3B;
+  color: #FFC116;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.yellow-text {
+  color: #FFC116;
+}
+
+.green-text {
+  color: #0F8C3B;
+}
